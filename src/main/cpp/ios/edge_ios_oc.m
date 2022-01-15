@@ -113,7 +113,8 @@ static void ios_report_edge_status(void) {
     pthread_mutex_init(&status.mutex, NULL);
     strncpy(status.cmd.ip_addr, config.ipAddress.UTF8String, sizeof(status.cmd.ip_addr) - 1);
     strncpy(status.cmd.ip_netmask, "255.255.255.0", sizeof(status.cmd.ip_netmask) - 1);
-    strncpy(status.cmd.supernodes[0], [NSString stringWithFormat:@"%@:%lu", config.superNodeAddr, (unsigned long)config.superNodePort].UTF8String, sizeof(status.cmd.supernodes[0]) - 1);    
+    strncpy(status.cmd.supernodes[0], [NSString stringWithFormat:@"%@:%lu", config.superNodeAddr, (unsigned long)config.superNodePort].UTF8String, sizeof(status.cmd.supernodes[0]) - 1);
+    
     strncpy(status.cmd.community, config.networkName.UTF8String, sizeof(status.cmd.community) - 1);
     status.cmd.enc_key = config.encryptionKey.UTF8String;
     //enc_key_file
